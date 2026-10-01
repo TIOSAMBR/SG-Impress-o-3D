@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="Catálogo online da SG Impress 3D. Peças personalizadas e criativas em impressão 3D.">
+  <title>SG Impress 3D | Catálogo</title>
+  <!-- ÍCONE DA ABA -->
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="./favicon.png?v=10">
+  <link rel="apple-touch-icon" href="favicon.png">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="storefront">
+  <header class="store-header">
+    <div class="store-header__inner">
+      <a class="brand brand--store" href="index.html" aria-label="Ir para o início">
+        <img class="brand-logo" src="logo-sg.jpg" alt="Logo SG Impressão 3D">
+        <span class="brand-copy"><strong id="storeName">SG Impress 3D</strong><small>Ideias que ganham forma</small></span>
+      </a>
+      <nav class="desktop-nav" aria-label="Navegação">
+        <a href="#destaques">Destaques</a>
+        <a href="#novidades">Novidades</a>
+        <a href="#catalogo">Catálogo</a>
+      </nav>
+      <button id="cartButton" class="cart-pill" type="button"><span>🛍️</span><span class="cart-pill__label">Seu pedido</span><span id="cartCount" class="cart-count">0</span></button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero-menu">
+      <div class="hero-menu__glow hero-menu__glow--one"></div><div class="hero-menu__glow hero-menu__glow--two"></div>
+      <div class="hero-menu__content">
+        <img class="hero-menu__logo" src="logo-sg.jpg" alt="Logo SG Impressão 3D">
+        <span class="section-kicker section-kicker--light">SG IMPRESSÃO 3D</span>
+        <h1>Sua ideia pode<br><span>ganhar forma.</span></h1>
+        <p>Peças criativas, presentes, decoração e projetos personalizados em impressão 3D.</p>
+        <div class="hero-actions"><a class="hero-menu__cta" href="#catalogo">Ver catálogo</a><a class="hero-menu__secondary" href="#destaques">Ver destaques</a></div>
+      </div>
+      <div class="hero-menu__art" aria-hidden="true"><div class="hero-shape hero-shape--a"></div><div class="hero-shape hero-shape--b"></div><div class="hero-shape hero-shape--c"></div></div>
+    </section>
+
+    <section id="destaques" class="section-shell featured-section hide-section">
+      <div class="section-row-head"><div><span class="section-kicker">ESCOLHAS DA SG</span><h2>Produtos em destaque</h2><p>Algumas peças que merecem atenção especial.</p></div><a href="#catalogo">Ver catálogo completo →</a></div>
+      <div id="featuredProducts" class="product-grid product-grid--featured"></div>
+    </section>
+
+    <section id="novidades" class="section-shell new-section hide-section">
+      <div class="section-row-head"><div><span class="section-kicker">ACABARAM DE CHEGAR</span><h2>Novidades</h2><p>Os produtos cadastrados mais recentemente.</p></div></div>
+      <div id="newProducts" class="product-grid product-grid--compact"></div>
+    </section>
+
+    <section id="catalogo" class="catalog-section section-shell">
+      <div class="section-intro section-intro--center"><span class="section-kicker">NOSSO CATÁLOGO</span><h2>Encontre a peça ideal</h2><p>Pesquise, escolha uma categoria e veja todos os detalhes antes de pedir.</p></div>
+      <div class="catalog-tools"><label class="search-box" for="search"><span>⌕</span><input id="search" type="search" placeholder="Buscar produto, categoria..." autocomplete="off"></label><div id="cats" class="cats"></div></div>
+      <div id="products" class="product-grid"></div>
+      <p id="empty" class="empty-state hide">Nenhum produto encontrado.</p>
+      <div class="load-more-wrap"><button id="loadMore" class="load-more hide" type="button">Ver mais produtos</button></div>
+    </section>
+
+    <section class="how-section"><div class="section-shell"><div class="section-intro section-intro--center"><span class="section-kicker">PASSO A PASSO</span><h2>Como funciona</h2><p>Escolha, personalize e finalize o pedido pelo WhatsApp.</p></div><div class="steps-grid">
+      <article class="step-card"><span class="step-number">01</span><div class="step-icon">🔎</div><small>Passo 01</small><h3>Escolha</h3><p>Veja fotos, medidas, material e opções disponíveis.</p></article>
+      <article class="step-card"><span class="step-number">02</span><div class="step-icon">🎨</div><small>Passo 02</small><h3>Personalize</h3><p>Confira cores e possibilidades de personalização.</p></article>
+      <article class="step-card"><span class="step-number">03</span><div class="step-icon">🛍️</div><small>Passo 03</small><h3>Adicione</h3><p>Coloque os produtos no carrinho e revise as quantidades.</p></article>
+      <article class="step-card"><span class="step-number">04</span><div class="step-icon">💬</div><small>Passo 04</small><h3>Finalize</h3><p>Envie o pedido pelo WhatsApp e combine os detalhes.</p></article>
+    </div></div></section>
+
+    <section class="payment-section section-shell">
+       <div class="section-intro section-intro--center">
+        <span class="section-kicker">PAGAMENTO</span>
+        <h2>Formas de pagamento</h2>
+        <p>Combine a melhor opção na confirmação do pedido.</p>
+      </div>
+
+      <div class="payment-grid">
+        <article class="payment-card"><span>◈</span><div><h3>Pix</h3><p>Pagamento rápido e prático.</p></div></article>
+        <article class="payment-card"><span>R$</span><div><h3>Dinheiro</h3><p>Combine no atendimento.</p></div></article>
+        <article class="payment-card"><span>▣</span><div><h3>Crédito</h3><p>Consulte as condições.</p></div></article>
+        <article class="payment-card"><span>▤</span><div><h3>Débito</h3><p>Consulte as condições.</p></div></article>
+      </div>
+    </section>
+
+    <section class="contact-section"><div class="section-shell contact-card"><div class="contact-card__copy"><span class="section-kicker section-kicker--light">FALE COM A SG</span><h2>Tem uma ideia diferente?</h2><p>Chame no WhatsApp para conversar sobre peças personalizadas, cores, tamanhos e projetos especiais.</p><div class="contact-actions"><a id="instagramLink" class="contact-btn contact-btn--light" href="#" target="_blank">Instagram</a><a id="whatsappLink" class="contact-btn contact-btn--outline" href="#" target="_blank">WhatsApp</a></div></div><img class="contact-card__logo" src="logo-sg.jpg" alt="SG Impressão 3D"></div></section>
+  </main>
+
+  <footer class="site-footer"><div class="site-footer__inner"><div class="site-footer__brand"><img src="logo-sg.jpg" alt="Logo SG Impressão 3D"><div><strong id="footerName">SG Impress 3D</strong><small>Peças personalizadas em impressão 3D</small></div></div><p>© <span id="year"></span> SG Impress 3D.</p></div></footer>
+
+  <div id="cart" class="cart-overlay hide"><aside class="cart-drawer"><div class="cart-drawer__header"><div><small>SEU PEDIDO</small><h2>Carrinho</h2></div><button id="closeCart" class="cart-close">×</button></div><div id="cartItems" class="cart-items"></div><div class="cart-summary"><div><span>Subtotal</span><strong id="total">R$ 0,00</strong></div></div><div class="checkout-fields"><label>Seu nome<input id="customer" placeholder="Como podemos te chamar?"></label><label>Observação<textarea id="note" placeholder="Cor, personalização ou outro detalhe"></textarea></label></div><button id="checkout" class="checkout-btn">Enviar pedido pelo WhatsApp</button><button id="continueShopping" class="continue-btn">Continuar comprando</button></aside></div>
+  <button id="floatingCart" class="floating-cart"><span>🛍️</span><b id="floatingCartCount">0</b></button>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

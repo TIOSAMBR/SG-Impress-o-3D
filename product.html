@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff"><title>Produto | SG Impress 3D</title><link rel="icon" type="image/png" sizes="512x512" href="favicon.png">
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="icon" type="image/png" href="./favicon.png?v=10">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="storefront product-page-body">
+  <header class="store-header"><div class="store-header__inner"><a class="brand brand--store" href="index.html"><img class="brand-logo" src="logo-sg.jpg" alt="Logo SG Impressão 3D"><span class="brand-copy"><strong id="storeName">SG Impress 3D</strong><small>Ideias que ganham forma</small></span></a><a class="back-catalog" href="index.html#catalogo">← Voltar ao catálogo</a><button id="cartButton" class="cart-pill"><span>🛍️</span><span class="cart-pill__label">Seu pedido</span><span id="cartCount" class="cart-count">0</span></button></div></header>
+
+  <main class="product-detail-shell">
+    <div id="productLoading" class="product-loading">Carregando produto...</div>
+    <section id="productDetail" class="product-detail hide">
+      <div class="product-gallery"><div class="product-main-photo"><img id="mainPhoto" src="" alt=""></div><div id="thumbs" class="product-thumbs"></div></div>
+      <div class="product-info">
+        <a id="productCategory" class="product-category-link" href="index.html#catalogo"></a>
+        <h1 id="productName"></h1>
+        <div id="productPrice" class="product-detail-price"></div>
+        <p id="productDescription" class="product-description"></p>
+        <div id="productBadges" class="product-badges"></div>
+        <div class="spec-grid">
+          <div id="materialBox" class="spec-card hide"><span>Material</span><strong id="productMaterial"></strong></div>
+          <div id="sizeBox" class="spec-card hide"><span>Tamanho</span><strong id="productSize"></strong></div>
+          <div id="colorsBox" class="spec-card hide"><span>Cores</span><strong id="productColors"></strong></div>
+          <div id="leadTimeBox" class="spec-card hide"><span>Prazo de produção</span><strong id="productLeadTime"></strong></div>
+        </div>
+        <div class="detail-actions"><div class="detail-qty"><button id="minusQty">−</button><span id="detailQty">1</span><button id="plusQty">+</button></div><button id="addDetailCart" class="detail-add">Adicionar ao carrinho</button></div>
+        <button id="buyNow" class="buy-now">Pedir agora pelo WhatsApp</button>
+        <p class="detail-note">As cores e o acabamento podem variar levemente conforme a impressão e o material utilizado.</p>
+      </div>
+    </section>
+    <section id="notFound" class="not-found hide"><h1>Produto não encontrado</h1><p>Este produto pode ter sido removido ou estar indisponível.</p><a href="index.html">Voltar para o catálogo</a></section>
+
+    <section id="relatedSection" class="related-section hide"><div class="section-row-head"><div><span class="section-kicker">VOCÊ TAMBÉM PODE GOSTAR</span><h2>Produtos relacionados</h2></div></div><div id="relatedProducts" class="product-grid product-grid--compact"></div></section>
+  </main>
+
+  <div id="cart" class="cart-overlay hide"><aside class="cart-drawer"><div class="cart-drawer__header"><div><small>SEU PEDIDO</small><h2>Carrinho</h2></div><button id="closeCart" class="cart-close">×</button></div><div id="cartItems" class="cart-items"></div><div class="cart-summary"><div><span>Subtotal</span><strong id="total">R$ 0,00</strong></div></div><div class="checkout-fields"><label>Seu nome<input id="customer" placeholder="Como podemos te chamar?"></label><label>Observação<textarea id="note" placeholder="Cor, personalização ou outro detalhe"></textarea></label></div><button id="checkout" class="checkout-btn">Enviar pedido pelo WhatsApp</button><button id="continueShopping" class="continue-btn">Continuar comprando</button></aside></div>
+  <script type="module" src="product.js"></script>
+</body>
+</html>

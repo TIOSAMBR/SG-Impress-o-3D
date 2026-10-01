@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SG Impress 3D — Administração</title><link rel="icon" type="image/png" sizes="512x512" href="favicon.png">
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="icon" type="image/png" href="./favicon.png?v=10">
+<link rel="stylesheet" href="style.css"></head>
+<body class="admin"><header class="topbar"><a class="brand" href="index.html"><img class="brand-logo" src="logo-sg.jpg" alt="Logo SG Impressão 3D"><span><strong>SG Impress 3D</strong><small>Painel administrativo</small></span></a><button id="logout" class="dark hide">Sair</button></header>
+<main class="adminwrap">
+<section id="login" class="login"><img class="login-logo" src="logo-sg.jpg" alt="Logo SG Impressão 3D"><small>ÁREA RESTRITA</small><h1>Entrar no painel</h1><p>Somente a administradora pode gerenciar o catálogo.</p><input id="email" type="email" placeholder="E-mail"><input id="password" type="password" placeholder="Senha"><button id="loginBtn" class="primary">Entrar</button><p id="loginMsg" class="msg"></p></section>
+<section id="panel" class="hide"><div class="adminhead"><div><small>PAINEL</small><h1>Gerenciar catálogo</h1></div><a class="admin-view-store" href="index.html">Ver loja ↗</a></div>
+<div class="stats"><div><b id="statProducts">0</b><span>Produtos</span></div><div><b id="statCategories">0</b><span>Categorias</span></div><div><b id="statAvailable">0</b><span>Disponíveis</span></div><div><b id="statFeatured">0</b><span>Destaques</span></div></div>
+<div class="admincols">
+<section class="card admin-form-card"><div class="card-heading"><div><span class="admin-kicker">PRODUTO</span><h2 id="formTitle">Novo produto</h2></div><button id="clear" class="secondary secondary--small">Limpar</button></div>
+<div class="form-grid"><label>Nome do produto<input id="pname" placeholder="Ex.: Dragão articulado"></label><label>Preço<input id="pprice" type="number" step=".01" placeholder="0,00"></label><label>Categoria<input id="pcat" placeholder="Ex.: Articulados"></label><label>Material<input id="pmaterial" placeholder="Ex.: PLA"></label><label>Tamanho<input id="psize" placeholder="Ex.: 20 cm"></label><label>Prazo de produção<input id="pleadtime" placeholder="Ex.: 2 a 4 dias"></label></div>
+<label>Cores disponíveis<input id="pcolors" placeholder="Ex.: Preto, branco, azul, vermelho"></label>
+<label>URL da imagem principal<input id="pimage" type="url" placeholder="https://..."></label><div id="preview" class="preview hide"><img id="previewImg"></div>
+<div class="form-grid"><label>Imagem 2 (opcional)<input id="pimage2" type="url" placeholder="https://..."></label><label>Imagem 3 (opcional)<input id="pimage3" type="url" placeholder="https://..."></label></div>
+<label>Descrição<textarea id="pdesc" rows="5" placeholder="Explique o produto, uso, acabamento e diferenciais."></textarea></label>
+<div class="admin-options"><label class="check"><input id="pcustomizable" type="checkbox"> Aceita personalização</label><label class="check"><input id="pfeatured" type="checkbox"> Produto em destaque</label><label class="check"><input id="pavailable" type="checkbox" checked> Produto disponível</label></div>
+<button id="saveProduct" class="primary">Salvar produto</button><p id="productMsg" class="msg"></p></section>
+<section class="card"><div class="card-heading"><div><span class="admin-kicker">CATÁLOGO</span><h2>Produtos cadastrados</h2></div></div><div id="adminProducts"></div></section>
+<section class="card settings-card"><span class="admin-kicker">LOJA</span><h2>Configurações</h2><label>Nome da loja<input id="storeName" placeholder="Nome da loja"></label><label>WhatsApp<input id="whatsapp" placeholder="5564999999999"></label><label>Instagram<input id="instagram" placeholder="@usuario"></label><button id="saveConfig" class="primary">Salvar configurações</button><p id="configMsg" class="msg"></p></section>
+</div></section></main><script type="module" src="admin.js"></script></body></html>
