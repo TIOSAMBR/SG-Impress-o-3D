@@ -66,3 +66,10 @@ O hero foi reduzido novamente para melhorar a experiência em telas menores:
 - mensagem lateral escondida em tablets;
 - logo de 105 px em celulares;
 - em celulares muito pequenos, a logo lateral é ocultada para priorizar texto e botões.
+
+
+## Atualização de layout
+
+- O hero simples “Sua ideia pode ganhar forma.” voltou para o topo.
+- A paleta dele foi atualizada para o roxo/azul atual da SG.
+- O hero mais elaborado foi movido para a seção “Fale com a SG”, mantendo os botões de Instagram e WhatsApp.
