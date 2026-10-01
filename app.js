@@ -13,7 +13,32 @@ const whatsappUrl=msg=>`https://wa.me/${String(config.whatsapp||"").replace(/\D/
 
 async function loadConfig(){const s=await getDoc(doc(db,"settings","store"));if(s.exists())config={...config,...s.data()}}
 async function loadProducts(){const q=query(collection(db,"products"),where("available","==",true));const s=await getDocs(q);products=s.docs.map(d=>({id:d.id,...d.data()})).sort((a,b)=>(b.createdAt?.seconds||0)-(a.createdAt?.seconds||0))}
-function applyStoreConfig(){$("storeName").textContent=config.storeName;$("footerName").textContent=config.storeName;document.title=`${config.storeName} | Catálogo`;const ig=normalizeInstagram(config.instagram),wa=whatsappUrl("Olá! Gostaria de saber mais sobre os produtos da SG Impress 3D.");[["instagramLink",ig],["whatsappLink",wa]].forEach(([id,url])=>{const el=$(id);if(url)el.href=url;else el.classList.add("is-disabled")})}
+function applyStoreConfig(){
+  $("storeName").textContent=config.storeName;
+  $("footerName").textContent=config.storeName;
+  document.title=`${config.storeName} | Catálogo`;
+
+  const ig=normalizeInstagram(config.instagram);
+  const wa=whatsappUrl("Olá! Gostaria de saber mais sobre os produtos da SG Impress 3D.");
+
+  [
+    ["instagramLink",ig],
+    ["whatsappLink",wa],
+    ["heroInstagramLink",ig],
+    ["heroWhatsappLink",wa]
+  ].forEach(([id,url])=>{
+    const el=$(id);
+    if(!el) return;
+
+    if(url){
+      el.href=url;
+      el.classList.remove("is-disabled");
+    }else{
+      el.href="#";
+      el.classList.add("is-disabled");
+    }
+  });
+}
 function productCard(p){const tags=[];if(p.featured)tags.push('<span class="product-tag product-tag--featured">Destaque</span>');if(p.customizable)tags.push('<span class="product-tag">Personalizável</span>');return `<article class="product-card"><a class="product-card__image" href="product.html?id=${p.id}">${p.imageUrl?`<img src="${esc(p.imageUrl)}" alt="${esc(p.name)}" loading="lazy">`:'<span class="no-image">Sem imagem</span>'}<div class="product-card__tags">${tags.join("")}</div></a><div class="product-card__content"><span class="product-card__category">${esc(p.category||"Outros")}</span><a class="product-card__name" href="product.html?id=${p.id}">${esc(p.name)}</a><p>${esc(p.description||"")}</p><div class="product-card__bottom"><strong>${money(p.price)}</strong><button data-add="${p.id}" aria-label="Adicionar ${esc(p.name)} ao carrinho">＋</button></div><a class="view-product-link" href="product.html?id=${p.id}">Ver detalhes</a></div></article>`}
 function bindAddButtons(root=document){root.querySelectorAll("[data-add]").forEach(b=>b.onclick=()=>addToCart(b.dataset.add,1))}
 function renderSpecialSections(){const featured=products.filter(p=>p.featured).slice(0,4),news=products.slice(0,4);const f=$("featuredProducts"),n=$("newProducts");f.innerHTML=featured.map(productCard).join("");n.innerHTML=news.map(productCard).join("");$("destaques").classList.toggle("hide-section",!featured.length);$("novidades").classList.toggle("hide-section",!news.length);bindAddButtons(f);bindAddButtons(n)}
